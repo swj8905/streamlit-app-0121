@@ -4,7 +4,7 @@ import json
 import pydeck as pdk
 import streamlit as st
 
-st.write("# 서울시 따릉이 시각화")
+st.write("# 서울시 따릉이 실시간 시각화")
 api_key = "757766614b74616c374a46696a55"
 bike_dict = {"rackTotCnt":[], "stationName":[],
              "parkingBikeTotCnt":[], "shared":[],
@@ -33,7 +33,7 @@ layer = pdk.Layer(
     "ScatterplotLayer",
     df,
     get_position=["longitude", "latitude"],
-    get_fill_color=["255-shared", "255-shared", "255"],
+    get_fill_color=["255", "255-shared", "255-shared"],
     get_radius="60*shared/100",
     pickable=True
 )
